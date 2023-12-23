@@ -9,6 +9,7 @@
 \end{enumerate}
 
 
+\begin{definition}    
 The implication $A \Rightarrow B$ is defined as:
 \begin{equation}
     A \Rightarrow B := \neg A \vee B
@@ -22,6 +23,451 @@ Another observation is:
 \end{equation}
 
 $\neg B \Rightarrow \neg A$ is the contrapositive of the statement $A \Rightarrow B$
+\end{definition}
+
+\begin{definition}
+    A function $f : X \rightarrow Y$ is a rule that for each element of $X$, there is only one element of $Y$.
+\end{definition}
+
+\begin{definition}
+    The fiber of $f$ at $y$ is $f^{-1}$ that:
+    \begin{equation}
+        f^{-1}(y) := \set{x \in X; f(x) = y}
+    \end{equation}
+\end{definition}
+
+\begin{definition}
+    A relation on $X$ which is reflective, transitive and symmetric is called an equivalent relation on $X$, and is denoted as $\sim$.
+    
+    It defines a surjection $X \rightarrow X / \sim$ which is called quotient function.
+\end{definition}
 
 
-A function $f : X \rightarrow Y$ is a rule that for each element of $X$, there is only one element of $Y$.
+
+\begin{theorem}
+    The natural number $\naturalnumber$ are well ordered, that is, each nonempty subset of $\naturalnumber$ has a minimum.
+\end{theorem}
+
+
+\begin{definition}
+    A set $X$ is finite if it is empty, or if there are $n \in \naturalnumber^{\times}$ and a bijection from $\set{1, ..., n}$ to $X$.
+    
+    If a set is not finite, it is infinite.
+    
+    A set $X$ is countably infinite if there is a bijection from $X$ to $\naturalnumber$. A set is countable if it is countably infinite or finite. Or it is uncountable.
+\end{definition}
+
+\begin{theorem}
+    There is no surjection from $X$ to $\powerset{X}$. So $\powerset{\naturalnumber}$ is uncountable.
+\end{theorem}
+\begin{proof}
+    Define a function $\varphi: X \rightarrow \powerset{X}$, and consider the set $A = \set{x\in X, x \notin \varphi(x)}$.
+\end{proof}
+
+
+\begin{theorem}
+A countable union of countable sets is countable.    
+\end{theorem}
+
+\begin{theorem}
+The set $\set{0,1}^{\naturalnumber}$ is uncountable.
+\end{theorem}
+\begin{proof}
+    Define a bijection from $\powerset{\naturalnumber}$ to $\set{0,1}^{\naturalnumber}$.
+\end{proof}
+
+
+\begin{definition}[group]
+    A group is a pair $(G, \odot)$ that:
+    \begin{itemize}
+        \item $\odot$ is associative: $a \odot (b \odot c) = (a \odot b) \odot c $
+        \item $\odot$ has identity element $e$: $a \odot e = a$
+        \item Every $g \in G$ has an inverse $g \odot h = h \odot g = e$
+    \end{itemize}
+\end{definition}
+
+\begin{definition}[coset]
+    Let $N$ be a subgroup of $G$ and $g \in G$. Then $g \odot N$ is the left coset and $N \odot g$ is the right coset.
+    
+    The left coset is an equivalent relation so it defines $G/N$ which is the set of left cosets of $G$ modulo $N$.
+\end{definition}
+
+\begin{definition}[normal]
+    A subgroup $N$ is normal if for all $g \in G$, we have 
+    \begin{equation}
+        g \odot N = N \odot g
+    \end{equation}    
+\end{definition}
+
+\begin{definition}[quotient group]
+    A normal subgroup $N$ induces a quotient group $(G/N) \times (G/N) \rightarrow G/N$ that 
+    \begin{equation}
+        (a \odot N, b \odot N) \rightarrow (a \odot b) \odot N
+    \end{equation} 
+\end{definition}
+
+\begin{definition}[homomorphism]
+    Let $G = (G, \odot)$ and $H = (H, \otimes)$ be groups. A function $\varphi: G \rightarrow H$ is a homomorphism if 
+    \begin{equation}
+        \varphi(g \odot h) = \varphi(g) \otimes \varphi(h)
+    \end{equation}
+    
+    The image of a homomorphism is a subgroup.
+\end{definition}
+
+\begin{theorem}
+    If $\varphi$ is a homomorphism, then $\varphi(e) = e'$ and $\varphi(g)^{-1} = \varphi(g^{-1})$.
+\end{theorem}
+
+\begin{definition}[kernel]
+    Let $\varphi$ be a homomorphism. The kernel of $\varphi$, $\kernel{\varphi}$ is defined as
+    \begin{equation}
+        \kernel{\varphi} = \varphi^{-1}(e')
+    \end{equation}
+    
+    The kernel is a subgroup.
+\end{definition}
+
+\begin{theorem}
+Let $\varphi$ be a homomorphism and $N = \kernel{\varphi}$, then
+\begin{equation}
+    g \odot N = \varphi^{-1}\left(\varphi(g)\right)
+\end{equation}
+\end{theorem}
+
+\begin{theorem}
+    Let $N$ be a normal subgroup of $G$. Then the quotient function $p: G \rightarrow G/N$ is a surjective homomorphism, the quotient homomorphism, with $\kernel{p} = N$.
+\end{theorem}
+
+
+
+\begin{theorem} 
+    Here are the essential trigonometry functions:    
+    
+\begin{equation}
+    \begin{aligned}
+        \sin(\alpha + \beta) &=\sin\alpha\cos\beta + \cos\alpha\sin\beta \\
+        \sin(\alpha - \beta) &=\sin\alpha\cos\beta - \cos\alpha\sin\beta \\
+        \cos(\alpha + \beta) &=\cos\alpha\cos\beta - \sin\alpha\sin\beta \\
+        \cos(\alpha - \beta) &=\cos\alpha\cos\beta + \sin\alpha\sin\beta \\
+        \tan(\alpha+\beta) &= \frac{\tanh\alpha + \tan\beta}{1 - \tan\alpha \tan\beta} \\   
+    \end{aligned}
+\end{equation}
+
+
+\begin{equation}
+    \begin{aligned}
+        \sin\alpha\cos\beta &=\frac{1}{2}[\sin(\alpha+\beta) + \sin(\alpha - \beta)] \\
+        \cos\alpha\sin\beta &=\frac{1}{2}[\sin(\alpha+\beta) - \sin(\alpha - \beta)] \\
+        \cos\alpha\cos\beta &=\frac{1}{2}[\cos(\alpha + \beta) + \cos(\alpha - \beta)] \\
+        \sin\alpha\sin\beta &=-\frac{1}{2}[\cos(\alpha + \beta) - \cos(\alpha - \beta)] \\
+    \end{aligned}
+\end{equation}
+
+
+\begin{equation}
+    \begin{aligned}   
+        \sin\alpha + \sin\beta &= 2 \sin\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2} \\
+        \sin\alpha - \sin\beta &= 2 \cos\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2} \\
+        \cos\alpha + \cos\beta &= 2 \cos\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2} \\
+        \cos\alpha - \cos\beta &= 2 \sin\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2} \\ 
+    \end{aligned}
+\end{equation}
+
+
+\begin{equation}
+    \begin{aligned}    
+        \sin 2\alpha &= 2 \sin\alpha \cos\alpha \\
+        \cos 2\alpha &= \cos^2 \alpha - \sin^2 \alpha \\
+        &= 2 \cos^2 \alpha - 1 \\
+        &= 1 - 2 \sin^2 \alpha \\
+        \sin 3\alpha &= 3 \sin\alpha - 4 \sin^3 \alpha \\
+        \cos 3\alpha &= -3 \cos\alpha + 4 \cos^3 \alpha \\
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}       
+        \sin \alpha &= \frac{2 \tan \frac{\alpha}{2}}{1 + \tan^2 \frac{\alpha}{2}} \\
+        \cos \alpha &= \frac{1 - \tan^2 \frac{\alpha}{2}}{1 + \tan^2 \frac{\alpha}{2}} \\
+        \tan \alpha &= \frac{2 \tan \frac{\alpha}{2}}{1 - \tan^2 \frac{\alpha}{2}} \\  
+    \end{aligned}
+\end{equation}
+
+
+\begin{equation}
+    a \sin\alpha + b \cos\alpha = \sqrt{a^2 + b^2}\sin\left(\alpha + \arcsin\frac{b}{\sqrt{a^2 + b^2}}\right)
+\end{equation}
+
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

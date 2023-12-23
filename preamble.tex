@@ -99,8 +99,12 @@
 \newcommand\defiref[1]{Definition~\ref{#1}\footnote{Page~\pageref{#1}}}
 
 
-%linear algebra
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% set theory %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 
+% natural number, the N
+\newcommand\naturalnumber[0]{\mathbb{N}}
 
 % real set, the R
 \newcommand\realset[0]{\mathbb{R}}
@@ -108,10 +112,25 @@
 % complex set, the C
 \newcommand\complexset[0]{\mathbb{C}}
 
-% null space, the N
+% the power set P(X)
+\newcommand\powerset[1]{\mathcal{P}(#1)}
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% group theory %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+\newcommand\kernel[1]{\displaystyle \mathrm{Ker}~( #1 )}
+
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% linear algebra %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+
+% null space, the N(x)
 \newcommand\nullspace[1]{\mathcal{N}(#1)}
 
-% range space, the R
+% range space, the R(x)
 \newcommand\rangespace[1]{\mathcal{R}(#1)}
 
 % absolute value, the |x|
@@ -178,8 +197,10 @@
 
 \newcommand\conjugate[1]{\overline{#1}}
 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% machine learning %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 
-% machine learning
 \newcommand\subscription[2]{\boldsymbol{#1}^{(#2)}}
 
 % argmin and argmax
