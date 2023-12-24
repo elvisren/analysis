@@ -9,6 +9,88 @@
 \end{enumerate}
 
 
+\begin{theorem}[multinomial formula]
+    for $\alpha=(\alpha_1, ... \alpha_m) \in \naturalnumber^m$ and $x=(x_1, ..., x_m) \realnumber^m$, define these operations:
+    \begin{equation}
+        \begin{aligned}
+            \absolutevalue{\alpha} &= \sum_{j=1}^m a_j \\
+            \alpha ! &= \prod_{j=1}^m \alpha_j ! \\
+            x^\alpha &= \prod_{j=1}^m {x_j}^{\alpha_j}
+        \end{aligned}
+    \end{equation}
+    
+    We have
+    \begin{equation}
+        \left(\sum_{j=1}^m x_j \right)^k = \sum_{\absolutevalue{\alpha = k}} \frac{k!}{\alpha !} x^\alpha
+    \end{equation}
+\end{theorem}
+
+
+
+
+
+\begin{theorem} 
+    Here are the essential trigonometry functions:    
+    
+\begin{equation}
+    \begin{aligned}
+        \sin(\alpha + \beta) &=\sin\alpha\cos\beta + \cos\alpha\sin\beta \\
+        \sin(\alpha - \beta) &=\sin\alpha\cos\beta - \cos\alpha\sin\beta \\
+        \cos(\alpha + \beta) &=\cos\alpha\cos\beta - \sin\alpha\sin\beta \\
+        \cos(\alpha - \beta) &=\cos\alpha\cos\beta + \sin\alpha\sin\beta \\
+        \tan(\alpha+\beta) &= \frac{\tanh\alpha + \tan\beta}{1 - \tan\alpha \tan\beta} \\   
+    \end{aligned}
+\end{equation}
+
+
+\begin{equation}
+    \begin{aligned}
+        \sin\alpha\cos\beta &=\frac{1}{2}[\sin(\alpha+\beta) + \sin(\alpha - \beta)] \\
+        \cos\alpha\sin\beta &=\frac{1}{2}[\sin(\alpha+\beta) - \sin(\alpha - \beta)] \\
+        \cos\alpha\cos\beta &=\frac{1}{2}[\cos(\alpha + \beta) + \cos(\alpha - \beta)] \\
+        \sin\alpha\sin\beta &=-\frac{1}{2}[\cos(\alpha + \beta) - \cos(\alpha - \beta)] \\
+    \end{aligned}
+\end{equation}
+
+
+\begin{equation}
+    \begin{aligned}   
+        \sin\alpha + \sin\beta &= 2 \sin\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2} \\
+        \sin\alpha - \sin\beta &= 2 \cos\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2} \\
+        \cos\alpha + \cos\beta &= 2 \cos\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2} \\
+        \cos\alpha - \cos\beta &= 2 \sin\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2} \\ 
+    \end{aligned}
+\end{equation}
+
+
+\begin{equation}
+    \begin{aligned}    
+        \sin 2\alpha &= 2 \sin\alpha \cos\alpha \\
+        \cos 2\alpha &= \cos^2 \alpha - \sin^2 \alpha \\
+        &= 2 \cos^2 \alpha - 1 \\
+        &= 1 - 2 \sin^2 \alpha \\
+        \sin 3\alpha &= 3 \sin\alpha - 4 \sin^3 \alpha \\
+        \cos 3\alpha &= -3 \cos\alpha + 4 \cos^3 \alpha \\
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}       
+        \sin \alpha &= \frac{2 \tan \frac{\alpha}{2}}{1 + \tan^2 \frac{\alpha}{2}} \\
+        \cos \alpha &= \frac{1 - \tan^2 \frac{\alpha}{2}}{1 + \tan^2 \frac{\alpha}{2}} \\
+        \tan \alpha &= \frac{2 \tan \frac{\alpha}{2}}{1 - \tan^2 \frac{\alpha}{2}} \\  
+    \end{aligned}
+\end{equation}
+
+
+\begin{equation}
+    a \sin\alpha + b \cos\alpha = \sqrt{a^2 + b^2}\sin\left(\alpha + \arcsin\frac{b}{\sqrt{a^2 + b^2}}\right)
+\end{equation}
+
+\end{theorem}
+
+
+
 \begin{definition}    
 The implication $A \Rightarrow B$ is defined as:
 \begin{equation}
@@ -77,14 +159,72 @@ The set $\set{0,1}^{\naturalnumber}$ is uncountable.
 \end{proof}
 
 
-\begin{definition}[group]
-    A group is a pair $(G, \odot)$ that:
-    \begin{itemize}
-        \item $\odot$ is associative: $a \odot (b \odot c) = (a \odot b) \odot c $
-        \item $\odot$ has identity element $e$: $a \odot e = a$
-        \item Every $g \in G$ has an inverse $g \odot h = h \odot g = e$
-    \end{itemize}
+\section{Define Numbers}
+
+%
+% group theory and define numbers
+%
+
+\begin{definition}[magma]
+    A magma $(M, \cdot)$ has the property that
+    \begin{equation}
+        a, b \in M \Rightarrow a \odot b \in M
+    \end{equation}
 \end{definition}
+
+\begin{definition}[semigroup]
+    A semigroup is a magma with associativity:
+    \begin{equation}
+        (a \odot b) \odot c = a \odot (b \odot c)
+    \end{equation}
+\end{definition}
+
+\begin{definition}[monoid]
+    A monoid is a semigroup with identity:
+    \begin{equation}
+        e \odot a = a
+    \end{equation}
+\end{definition}
+
+\begin{definition}[group]
+    A group is monoid with inverse:
+    \begin{equation}
+        \forall a, \exists b \Rightarrow a \odot b = e
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Abelian group]
+    An Abelian group is a group with commutativity on $\cdot$:
+    \begin{equation}
+        a \odot b = b \odot a
+    \end{equation}
+\end{definition}
+
+\begin{definition}[ring]
+    A ring $(R, +, \odot)$ is defined as:
+    \begin{itemize}
+        \item $+$ is an Abelian group
+        \item $\odot$ is a monoid
+        \item Distributivity: $a \odot (b + c) = a \odot b + a \odot c$, and $(a+b) \odot c = a \odot c + b \odot c$
+    \end{itemize}
+    
+\end{definition}
+
+\begin{definition}[field]
+    A field is a ring that $\odot$ is a group too.
+\end{definition}
+
+\begin{definition}[ordered field]
+    An ordered field is a field with order $\leq$:
+    \begin{itemize}
+        \item $(R, \leq)$ is totally ordered
+        \item $x < y \Rightarrow x + z < y + z$
+        \item $x,y > 0 \Rightarrow xy > 0$
+    \end{itemize}
+    
+    $x \in R$ is positive if $x > 0$.
+\end{definition}
+
 
 \begin{definition}[coset]
     Let $N$ be a subgroup of $G$ and $g \in G$. Then $g \odot N$ is the left coset and $N \odot g$ is the right coset.
@@ -140,79 +280,77 @@ Let $\varphi$ be a homomorphism and $N = \kernel{\varphi}$, then
 \end{theorem}
 
 
+\begin{definition}[isomorphism]
+    A homomorphism is isomorphism if it is bijective. If it is from $G$ to itself, it is automorphism. Examples are:
+    \begin{itemize}
+        \item $g: a \odot g \odot a^{-1}$
+        \item for surjective homomorphism $\varphi: G \rightarrow H$, $\varphi' : G/\kernel{\varphi} \rightarrow H$
+        \item Let $(G, \odot)$ be a group, but $H$ is not. And $\varphi: G \rightarrow H$ is a bijection. Then define a function $\otimes$ that $g' \otimes h' := \varphi^{-1}(g') \odot \varphi^{-1}(h')$. $\otimes$ is the operation on $H$ induced from $\odot$ by $\varphi$
+    \end{itemize}
+\end{definition}
 
-\begin{theorem} 
-    Here are the essential trigonometry functions:    
+
+Natural number $\naturalnumber$ did not support the inverse $-n$. Integer $\integer$ is the smallest ring that contains $(\naturalnumber, +)$. For convenience we have defined the following:
+\begin{itemize}
+    \item The additive identity is denoted by $0_R$
+    \item The multiplicity identity is denoted by $1_R$
+    \item The additive inverse of $a$ is $-a$
+    \item $0 \cdot a = a \cdot 0 = 0$
+\end{itemize}
+
+Integer $\integer$ did not support the $m/n$. Rational number $\rational$ is the smallest field that contains $\integer$. $\rational$ has a limitation too. For example, there is no rational $x$ that $x^2 = 2$. So we need to extend $\rational$ too.
+
+\begin{definition}[order complete]
+    Let $X$ be a totally ordered set. It is order complete if every nonempty subset is bounded below.
+\end{definition}
+
+\begin{definition}[Dedekind cut property]
+    A set $X$ has Dedekind cut proper if for all nonempty subset $A,B \subset X$ such that $a \leq b$ for all $(a,b) \in A \times B$, there is $c \in X$ that $a \leq c \leq b$ for all $(a,b) \in A \times B$.
     
-\begin{equation}
-    \begin{aligned}
-        \sin(\alpha + \beta) &=\sin\alpha\cos\beta + \cos\alpha\sin\beta \\
-        \sin(\alpha - \beta) &=\sin\alpha\cos\beta - \cos\alpha\sin\beta \\
-        \cos(\alpha + \beta) &=\cos\alpha\cos\beta - \sin\alpha\sin\beta \\
-        \cos(\alpha - \beta) &=\cos\alpha\cos\beta + \sin\alpha\sin\beta \\
-        \tan(\alpha+\beta) &= \frac{\tanh\alpha + \tan\beta}{1 - \tan\alpha \tan\beta} \\   
-    \end{aligned}
-\end{equation}
+    Dedekind cut property and order complete are equivalent.
+\end{definition}
 
+\begin{theorem}
+    $\rational$ is not order complete.
+\end{theorem}
+\begin{proof}
+    Define $A:=\set{x \in \rational; x > 0 , x^2 < 2}$, and $B:=\set{x \in \rational; x > 0, x^2 > 2}$. Assume there is $c$ that $a \leq c \leq b$, define $\xi = \frac{2c+2}{c+2}$, we have
+    \begin{equation}
+        \begin{aligned}
+            \xi^2 - 2 &= \frac{2(c^2 -2)}{(c+2)^2} \\
+            \xi - c &= - \frac{c^2 -2}{c+2}    
+        \end{aligned}        
+    \end{equation}
+    
+    If $c^2 < 2$, we have $\xi^2 < 2$ and $\xi < c$, so $\xi \in A$ and $\xi > c$, contradiction.
+\end{proof}
 
-\begin{equation}
-    \begin{aligned}
-        \sin\alpha\cos\beta &=\frac{1}{2}[\sin(\alpha+\beta) + \sin(\alpha - \beta)] \\
-        \cos\alpha\sin\beta &=\frac{1}{2}[\sin(\alpha+\beta) - \sin(\alpha - \beta)] \\
-        \cos\alpha\cos\beta &=\frac{1}{2}[\cos(\alpha + \beta) + \cos(\alpha - \beta)] \\
-        \sin\alpha\sin\beta &=-\frac{1}{2}[\cos(\alpha + \beta) - \cos(\alpha - \beta)] \\
-    \end{aligned}
-\end{equation}
+\begin{definition}[Dedekind cut]
+    A Dedekind cut is a partition of the rationals $\rational$ into two subsets $A$ and $B$ such that
+    \begin{itemize}
+        \item $A$ is not empty
+        \item $A \neq \rational$ ($B$ is not empty)
+        \item If $x,y \in \rational$, $x < y$, and $y \in A$, then $x \in A$ ($A$ is closed downwards)
+        \item If $x \in A$, there is $y \in A$ that $y > x$ (there is no greatest number in $A$)
+    \end{itemize}
+    
+    $A$ and $B$ defines each other. $B$ has a minimal number. 
+\end{definition}
 
+So the real number $\realnumber$ is an order completion of rational number $\rational$, which is defined by set $A$ in Dedekind cut. It fills the wholes in $\rational$.
 
-\begin{equation}
-    \begin{aligned}   
-        \sin\alpha + \sin\beta &= 2 \sin\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2} \\
-        \sin\alpha - \sin\beta &= 2 \cos\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2} \\
-        \cos\alpha + \cos\beta &= 2 \cos\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2} \\
-        \cos\alpha - \cos\beta &= 2 \sin\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2} \\ 
-    \end{aligned}
-\end{equation}
-
-
-\begin{equation}
-    \begin{aligned}    
-        \sin 2\alpha &= 2 \sin\alpha \cos\alpha \\
-        \cos 2\alpha &= \cos^2 \alpha - \sin^2 \alpha \\
-        &= 2 \cos^2 \alpha - 1 \\
-        &= 1 - 2 \sin^2 \alpha \\
-        \sin 3\alpha &= 3 \sin\alpha - 4 \sin^3 \alpha \\
-        \cos 3\alpha &= -3 \cos\alpha + 4 \cos^3 \alpha \\
-    \end{aligned}
-\end{equation}
-
-\begin{equation}
-    \begin{aligned}       
-        \sin \alpha &= \frac{2 \tan \frac{\alpha}{2}}{1 + \tan^2 \frac{\alpha}{2}} \\
-        \cos \alpha &= \frac{1 - \tan^2 \frac{\alpha}{2}}{1 + \tan^2 \frac{\alpha}{2}} \\
-        \tan \alpha &= \frac{2 \tan \frac{\alpha}{2}}{1 - \tan^2 \frac{\alpha}{2}} \\  
-    \end{aligned}
-\end{equation}
-
-
-\begin{equation}
-    a \sin\alpha + b \cos\alpha = \sqrt{a^2 + b^2}\sin\left(\alpha + \arcsin\frac{b}{\sqrt{a^2 + b^2}}\right)
-\end{equation}
-
+\begin{theorem}
+    Here are the common properties of real numbers:
+    \begin{itemize}
+        \item For each $x \in \realnumber$, there is a $n$ that $n > x$.
+        \item If $\displaystyle 0 \leq a \leq \frac{1}{n}$ for all $n \in \naturalnumber^{\times}$, then $a = 0$
+        \item For any $a >0$, there is $n \in \naturalnumber^{\times}$ that $\displaystyle \frac{1}{n} < a$
+        \item For any $a,b\in \realnumber$ that $a < b$, there is $q \in \rational$ that $a < q < b$
+        \item For any $a,b\in \realnumber$ that $a < b$, there is $r \in \realnumber \textbackslash \rational $ that $a < r < b$
+    \end{itemize}    
 \end{theorem}
 
-
-
-
-
-
-
-
-
-
-
-
-
+The real number $\realnumber$ still has limitation. It cannot solve $x^2 = -1$. The smallest extension field $\complexnumber$ to $\realnumber$ is the complex number.
 
 
 

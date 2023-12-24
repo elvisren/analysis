@@ -106,14 +106,34 @@
 % natural number, the N
 \newcommand\naturalnumber[0]{\mathbb{N}}
 
+% integer, the Z
+\newcommand\integer[0]{\mathbb{Z}}
+
+% rational, the Q
+\newcommand\rational[0]{\mathbb{Q}}
+
 % real set, the R
-\newcommand\realset[0]{\mathbb{R}}
+\newcommand\realnumber[0]{\mathbb{R}}
+
+% position real set, the R
+\newcommand\positiverealnumber[0]{\mathbb{R}^{+}}
 
 % complex set, the C
-\newcommand\complexset[0]{\mathbb{C}}
+\newcommand\complexnumber[0]{\mathbb{C}}
 
 % the power set P(X)
 \newcommand\powerset[1]{\mathcal{P}(#1)}
+
+% open ball, B(x, r)
+\newcommand\openball[2]{\mathbb{B}(#1, #2)}
+
+% closed ball, B[x,r]
+\newcommand\closedball[2]{\overline{\mathbb{B}}(#1, #2)}
+
+% extended real, R with -inf and inf
+\newcommand\extendedrealnumber[0]{\overline{\mathbb{R}}}
+
+
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% group theory %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -135,7 +155,6 @@
 
 % absolute value, the |x|
 \newcommand\absolutevalue[1]{\abs{#1}}
-
 
 % absolute value text, the "abs"
 \newcommand\absolutevaluetext[1]{\mathrm{abs}~#1}
@@ -192,8 +211,11 @@
 %\newcommand\adjugate[1]{\displaystyle \mathrm{adj}~\displaystyle #1 }
 \newcommand\cofactor[1]{\displaystyle \mathrm{cof}~\displaystyle #1 }
 
+% column vector
 \newcommand\columnvector[1]{\boldsymbol{#1}}
-% \newcommand\norm[1]{\displaystyle \left\lVert #1 \right\rVert}
+
+% norm
+\newcommand\vectornorm[1]{\displaystyle \left\lVert #1 \right\rVert}
 
 \newcommand\conjugate[1]{\overline{#1}}
 
