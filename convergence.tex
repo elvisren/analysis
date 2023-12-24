@@ -159,23 +159,49 @@ Extend $\realnumber$ to $\extendedrealnumber$ by adding $\pm \infty$ to the clus
 \begin{definition}
     Let $(x_n)$ be a sequence in $\realnumber$. Define limit superior as
     \begin{equation}
-        \varlimsup_{n\rightarrow \infty} x_n = \lim_{n \rightarrow \infty} \underset{k \geq n}{\text{ sup }} x_k
+        S = \limsup_{n \rightarrow \infty} x_n = \varlimsup_{n\rightarrow \infty} x_n = \lim_{n \rightarrow \infty} \underset{k \geq n}{\text{ sup }} x_k
     \end{equation}
     
     and limit inferior as
     \begin{equation}
-        \varliminf_{n\rightarrow \infty} x_n = \lim_{n \rightarrow \infty} \underset{k \geq n}{\text{ inf }} x_k
+        I = \liminf_{n \rightarrow \infty} x_n = \varliminf_{n\rightarrow \infty} x_n = \lim_{n \rightarrow \infty} \underset{k \geq n}{\text{ inf }} x_k
     \end{equation}    
-    
-    So $\displaystyle \varlimsup_{n\rightarrow \infty} x_n$ is a decreasing sequence and $\displaystyle \varliminf_{n\rightarrow \infty} x_n$ is an increasing sequence.
 \end{definition}
+
+Be noted that $\displaystyle \varlimsup_{n\rightarrow \infty} x_n$ is a decreasing sequence and $\displaystyle \varliminf_{n\rightarrow \infty} x_n$ is an increasing sequence.
+
+
+If limit superior S is a real number $s$, it means that for any $\epsilon>0$, there is a $N$ that $s + \epsilon$ is an upper bound for $x_{n > N}$. The reverse is true for limit inferior I.
+
+$[I,S]$ may not contain any number from $(x_n)$. But for any $\epsilon >0$, $[I - \epsilon, S + \epsilon]$ contains all but finite numbers from $(x_n)$, and this is the smallest closed interval with this property.
+
+In general we have 
+\begin{equation}
+    \inf_{n \rightarrow \infty} x_n \leq \liminf_{n \rightarrow \infty} x_n \leq \limsup_{n \rightarrow \infty} x_n \leq \sup_{n \rightarrow \infty} x_n
+\end{equation}
+
+The additivity of limit superior and inferior is
+\begin{equation}
+    \begin{aligned}
+        \liminf_{n \rightarrow \infty} (a_n + b_n) &\geq \liminf_{n \rightarrow \infty} a_n + \liminf_{n \rightarrow \infty} b_n \\
+        \limsup_{n \rightarrow \infty} (a_n + b_n) &\leq \limsup_{n \rightarrow \infty} a_n + \limsup_{n \rightarrow \infty} b_n \\
+    \end{aligned}
+\end{equation}
+
+
+\begin{theorem}
+    A sequence converges in $\realnumber$ when 
+    \begin{equation}
+        \varlimsup_{n\rightarrow \infty} x_n = \varliminf_{n\rightarrow \infty} x_n \in \realnumber
+    \end{equation}
+\end{theorem}
 
 \begin{theorem}
     Any sequence $(x_n)$ in $\realnumber$ has a smallest cluster point $x_*$ and greatest cluster point $x^*$ in $\extendedrealnumber$ that
     \begin{equation}
         \begin{aligned}
-            \varlimsup_{n\rightarrow \infty} x_n &= x^* \\
-            \varliminf_{n\rightarrow \infty} x_n &= x_*
+            \limsup_{n \rightarrow \infty} x_n &= \varlimsup_{n\rightarrow \infty} x_n &= x^* \\
+            \liminf_{n \rightarrow \infty} x_n &= \varliminf_{n\rightarrow \infty} x_n &= x_*
         \end{aligned}
     \end{equation}
 \end{theorem}
@@ -193,12 +219,6 @@ Extend $\realnumber$ to $\extendedrealnumber$ by adding $\pm \infty$ to the clus
     Every bounded sequence in $\realnumber^n$ has a convergent subsequence. 
 \end{theorem}
 
-\begin{theorem}
-    A sequence converges in $\realnumber$ when 
-    \begin{equation}
-        \varlimsup_{n\rightarrow \infty} x_n = \varliminf_{n\rightarrow \infty} x_n
-    \end{equation}
-\end{theorem}
 
 
 
